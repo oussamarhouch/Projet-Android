@@ -3,9 +3,9 @@ package com.example.ideationnation
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class AccueilActivity : AppCompatActivity() {
+class ProfileActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_accueil)
+        setContentView(R.layout.activity_profile)
     }
 }

@@ -1,6 +1,7 @@
 package com.example.ideationnation
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.view.View.GONE
@@ -24,6 +25,11 @@ class LoginActivity : AppCompatActivity() {
         loginLayout = findViewById(R.id.loginLayout);
         signUpLayout = findViewById(R.id.signLayout);
         changecolor(loginButton, signButton)
+        val skipButton = findViewById<Button>(R.id.button3)
+        skipButton.setOnClickListener {
+            val intent = Intent(this , ProfileActivity::class.java)
+            startActivity(intent)
+        }
 
         loginButton.setOnClickListener {
             logIndex++
