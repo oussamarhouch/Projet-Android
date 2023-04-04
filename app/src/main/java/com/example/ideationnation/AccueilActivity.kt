@@ -13,6 +13,7 @@ import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import java.util.*
 import android.util.Base64
+import com.example.ideationnation.data.NotificationActivity
 
 
 class AccueilActivity() : AppCompatActivity(), Parcelable {
@@ -26,9 +27,13 @@ class AccueilActivity() : AppCompatActivity(), Parcelable {
         setContentView(R.layout.activity_acceuil)
 
         val profileImageView = findViewById<ImageView>(R.id.profile_icon)
+        val notificationImageView = findViewById<ImageView>(R.id.notification_icon)
         val sharedPrefs = getSharedPreferences("my_app_prefs", MODE_PRIVATE)
         val imageUriString = sharedPrefs.getString("profile_image_uri", "")
-
+       notificationImageView.setOnClickListener {
+            val intent = Intent(this, NotificationActivity::class.java)
+            startActivity(intent)
+        }
         if (!imageUriString.isNullOrEmpty()) {
             val imageUri = Uri.parse(imageUriString)
             val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, imageUri)
