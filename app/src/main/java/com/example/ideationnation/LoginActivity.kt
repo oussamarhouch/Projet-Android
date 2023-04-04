@@ -27,7 +27,7 @@ class LoginActivity : AppCompatActivity() {
         changecolor(loginButton, signButton)
         val skipButton = findViewById<Button>(R.id.button3)
         skipButton.setOnClickListener {
-            val intent = Intent(this , ProfileActivity::class.java)
+            val intent = Intent(this , ProfilePicture::class.java)
             startActivity(intent)
         }
 
