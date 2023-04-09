@@ -1,4 +1,4 @@
-package com.example.ideationnation.data
+package com.example.ideationnation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

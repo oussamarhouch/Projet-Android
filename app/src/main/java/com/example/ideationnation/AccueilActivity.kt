@@ -2,7 +2,6 @@
 package com.example.ideationnation
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.content.Intent
 import android.graphics.*
 import android.net.Uri
@@ -14,7 +13,6 @@ import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import java.util.*
 import android.util.Base64
-import com.example.ideationnation.data.NotificationActivity
 
 
 class AccueilActivity() : AppCompatActivity(), Parcelable {
