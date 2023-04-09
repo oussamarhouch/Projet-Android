@@ -44,7 +44,7 @@
         android:layout_height="57dp"
         android:layout_marginTop="160dp"
         android:backgroundTint="#6ac4da"
-        android:text="LOGIN"
+        android:text="sign in"
 
         android:textColor="#E2010529"
         android:textStyle="bold"
@@ -95,7 +95,7 @@
         android:layout_width="363dp"
         android:layout_height="660dp"
         android:padding="1dp"
-        android:visibility="visible"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.937"
         app:layout_constraintStart_toStartOf="parent"
@@ -109,8 +109,9 @@
             android:layout_marginLeft="160dp"
             android:layout_marginTop="612dp"
             android:backgroundTint="#fdfdf4"
-            android:text="Reset here"
+            android:text="Reset Ur Password"
             android:textColor="#2a2af1"
+            android:textSize="8dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.736"
@@ -125,7 +126,7 @@
             android:layout_height="69dp"
             android:layout_marginTop="540dp"
             android:backgroundTint="#6ac4da"
-            android:text="LOGIN"
+            android:text="sign in"
 
             android:textColor="#E2010529"
             android:textStyle="bold"
@@ -155,9 +156,9 @@
             android:layout_width="259dp"
             android:layout_height="42dp"
             android:layout_marginTop="256dp"
-            android:text=" Welcome back"
+            android:text="Welcome Dear Innovator 👋"
             android:textColor="#414140"
-            android:textSize="30sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.267"
@@ -168,10 +169,10 @@
         <TextView
             android:id="@+id/textView8"
             android:layout_width="250dp"
-            android:layout_height="21dp"
-            android:layout_marginTop="324dp"
-            android:text="Sign in with your account"
-            android:textSize="16sp"
+            android:layout_height="50dp"
+            android:layout_marginTop="300dp"
+            android:text="We Hope that you'ill have a fun time at our Ideation nation and find a lot of innovative ideas"
+            android:textSize="12sp"
 
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -197,7 +198,7 @@
             android:layout_height="26dp"
             android:layout_marginTop="620dp"
             android:layout_marginEnd="204dp"
-            android:text="Forget your password? "
+            android:text="Forgot your password? "
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -242,7 +243,8 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints">
+        tools:ignore="MissingConstraints"
+        tools:visibility="visible">
 
         <Button
             android:id="@+id/loginbutton"
@@ -266,10 +268,10 @@
             android:id="@+id/signupbutton"
             android:layout_width="289dp"
             android:layout_height="69dp"
+            android:layout_marginLeft="15dp"
             android:layout_marginTop="540dp"
             android:backgroundTint="#6ac4da"
             android:text="SIGN UP"
-            android:layout_marginLeft="15dp"
             android:textColor="#E2010529"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -283,10 +285,10 @@
             android:id="@+id/editTextTextEmailAddress2"
             android:layout_width="309dp"
             android:layout_height="35dp"
+            android:layout_marginLeft="15dp"
             android:layout_marginTop="296dp"
             android:autofillHints=""
             android:ems="10"
-            android:layout_marginLeft="15dp"
             android:inputType="textEmailAddress"
             app:layout_constraintEnd_toEndOf="parent"
 
@@ -299,10 +301,10 @@
             android:id="@+id/password"
             android:layout_width="151dp"
             android:layout_height="26dp"
-            android:layout_marginTop="452dp"
-
-            android:text="Password"
             android:layout_marginLeft="15dp"
+
+            android:layout_marginTop="452dp"
+            android:text="Confirm Password"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -311,11 +313,11 @@
             android:id="@+id/confirmpassword"
             android:layout_width="151dp"
             android:layout_height="26dp"
-            android:layout_marginTop="368dp"
-
-            android:text="Confirm Password"
-            android:textStyle="bold"
             android:layout_marginLeft="15dp"
+
+            android:layout_marginTop="368dp"
+            android:text="Password"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -323,9 +325,9 @@
             android:id="@+id/haveaccount"
             android:layout_width="243dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="620dp"
-
             android:layout_marginLeft="15dp"
+
+            android:layout_marginTop="620dp"
             android:text="Already have an account? "
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -335,10 +337,10 @@
             android:id="@+id/username"
             android:layout_width="151dp"
             android:layout_height="26dp"
+            android:layout_marginLeft="15dp"
             android:layout_marginTop="272dp"
             android:text="Username"
             android:textStyle="bold"
-            android:layout_marginLeft="15dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.219"
             app:layout_constraintStart_toStartOf="parent"
@@ -348,10 +350,10 @@
             android:id="@+id/editTextTextPassword3"
             android:layout_width="316dp"
             android:layout_height="42dp"
+            android:layout_marginLeft="15dp"
             android:layout_marginTop="396dp"
             android:autofillHints=""
             android:ems="10"
-            android:layout_marginLeft="15dp"
             android:inputType="textPassword"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.589"
@@ -363,10 +365,10 @@
             android:id="@+id/TextPassword"
             android:layout_width="316dp"
             android:layout_height="42dp"
+            android:layout_marginLeft="15dp"
             android:layout_marginTop="480dp"
             android:autofillHints=""
             android:ems="10"
-            android:layout_marginLeft="15dp"
             android:inputType="textPassword"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.526"
@@ -378,15 +380,14 @@
 
     <ImageView
         android:id="@+id/facebook"
-        android:layout_width="85dp"
-        android:layout_height="55dp"
+        android:layout_width="75dp"
+        android:layout_height="53dp"
         android:layout_marginTop="676dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.171"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-
-        app:srcCompat="@drawable/faceb" />
+        app:srcCompat="@drawable/facebook" />
 
     <ImageView
         android:id="@+id/google"
@@ -399,7 +400,7 @@
         app:srcCompat="@drawable/google" />
 
     <ImageView
-        android:id="@+id/twitter"
+        android:id="@+id/github"
         android:layout_width="75dp"
         android:layout_height="53dp"
         android:layout_marginTop="676dp"
@@ -407,7 +408,7 @@
         app:layout_constraintHorizontal_bias="0.845"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/twitter" />
+        app:srcCompat="@drawable/github" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
