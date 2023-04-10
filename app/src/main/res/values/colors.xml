@@ -9,5 +9,12 @@
     <color name="white">#FFFFFFFF</color>
     <color name="gris">#6B6A6A</color>
     <color name="my_button_color">#04025a</color>
+    <color name="Top_rectangle_start_color">#E2010529</color>
+    <color name="Top_rectangle_end_color">#001</color>
+    <color name="search_color">#cdc2f5</color>
+    <color name="userrname_color">#7c3e78</color>
+    <color name="interaction_bar">#c6b7fe</color>
+    <color name="down_screen_bar">#bba8ff</color>
+
 
 </resources>
