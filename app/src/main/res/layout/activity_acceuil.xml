@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/rm218_bb_07"
     tools:context=".AccueilActivity">
 
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="420dp"
-        android:layout_height="106dp"
-        android:layout_marginTop="668dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="652dp"
 
-        android:background="@drawable/circle_background"
-        android:backgroundTint="#E2010527"
+        android:background="@drawable/search_bar_rect"
+        android:backgroundTint="@color/down_screen_bar"
         android:paddingStart="15dp"
         android:paddingTop="50dp"
         android:paddingEnd="10dp"
@@ -26,33 +26,155 @@
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/profile_icon"
-        android:layout_width="63dp"
-        android:layout_height="63dp"
-        android:layout_marginTop="688dp"
+        android:layout_width="75dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="652dp"
 
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.953"
+        app:layout_constraintHorizontal_bias="0.946"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/profileicon" />
 
-    <ImageView
-        android:id="@+id/notification_icon"
-        android:layout_width="63dp"
-        android:layout_height="63dp"
-        android:layout_marginTop="28dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="415dp"
+        android:layout_height="210dp"
+        android:background="@drawable/rectangle_dark_blue"
+        tools:layout_editor_absoluteX="-3dp"
+        tools:layout_editor_absoluteY="-6dp">
 
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.954"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/not" />
+        <ImageView
+            android:id="@+id/notification_icon"
+            android:layout_width="63dp"
+            android:layout_height="63dp"
+
+            app:srcCompat="@drawable/not"
+            tools:layout_editor_absoluteX="336dp"
+            tools:layout_editor_absoluteY="24dp" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Salut User!"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="#ffff"
+            tools:layout_editor_absoluteX="124dp"
+            tools:layout_editor_absoluteY="78dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
+        android:layout_width="412dp"
+        android:layout_height="80dp"
+        android:background="@drawable/search_bar_rect"
+        android:backgroundTint="@color/search_color"
+        tools:layout_editor_absoluteX="-1dp"
+        tools:layout_editor_absoluteY="204dp">
+
+        <SearchView
+            android:layout_width="407dp"
+            android:layout_height="54dp"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="14dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Trending"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="#ffff"
+        tools:layout_editor_absoluteX="145dp"
+        tools:layout_editor_absoluteY="300dp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="411dp"
+        android:layout_height="250dp"
+        android:background="@drawable/search_bar_rect"
+        android:backgroundTint="@color/search_color"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="345dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="413dp"
+            android:layout_height="193dp">
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/quote"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                tools:layout_editor_absoluteX="37dp"
+                tools:layout_editor_absoluteY="63dp" />
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:text="@string/username"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textColor="#7c3e78"
+                tools:layout_editor_absoluteX="287dp"
+                tools:layout_editor_absoluteY="146dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="430dp"
+            android:layout_height="51dp"
+            android:background="@drawable/search_bar_rect"
+            android:backgroundTint="@color/interaction_bar"
+            tools:layout_editor_absoluteX="-9dp"
+            tools:layout_editor_absoluteY="196dp">
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:layout_editor_absoluteX="8dp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="54dp"
+                android:layout_height="48dp"
+                android:background="@drawable/commentary__2_"
+                tools:layout_editor_absoluteX="343dp"
+                tools:layout_editor_absoluteY="3dp">
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="73dp"
+        android:layout_height="73dp"
+        android:background="@drawable/plus"
+        tools:layout_editor_absoluteX="167dp"
+        tools:layout_editor_absoluteY="655dp">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout4"
+        android:layout_width="81dp"
+        android:layout_height="71dp"
+        android:background="@drawable/chat"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="656dp">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
