@@ -21,12 +21,13 @@ class ProfileActivity : AppCompatActivity() {
     private lateinit var adapter: ArticleAdapter
     private lateinit var recyclerView: RecyclerView
     private lateinit var spinnerSort: Spinner
-    private val layoutInflater: LayoutInflater = LayoutInflater.from(this@ProfileActivity)
+    private lateinit var layoutInflater: LayoutInflater
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
 
+        layoutInflater = LayoutInflater.from(this@ProfileActivity)
         database = FirebaseDatabase.getInstance().reference
         adapter = ArticleAdapter()
         recyclerView = findViewById(R.id.recyclerView)
