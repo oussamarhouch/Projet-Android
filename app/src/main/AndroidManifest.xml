@@ -12,6 +12,9 @@
         android:theme="@style/Theme.IdeationNation"
         tools:targetApi="31">
         <activity
+            android:name=".EditProfileActivity"
+            android:exported="true" />
+        <activity
             android:name=".Article"
             android:exported="false" />
         <activity
@@ -42,5 +45,7 @@
             </intent-filter>
         </activity>
     </application>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
 
 </manifest>
