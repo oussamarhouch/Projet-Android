@@ -6,7 +6,10 @@ import android.os.Bundle
 import android.view.View
 import android.view.View.GONE
 import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
 import android.graphics.Color as Color1
 
 
@@ -15,32 +18,59 @@ class LoginActivity : AppCompatActivity() {
     private var signIndex: Int = 0
     private var loginLayout: View? = null
     private var signUpLayout: View? = null
+
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_loginactivity)
 
-        val loginButton = findViewById<Button>(R.id.button)
-        val signButton = findViewById<Button>(R.id.button2)
+        val SwitchToLoginButton = findViewById<Button>(R.id.button)
+        val SwitchToSignUpButton = findViewById<Button>(R.id.button2)
         loginLayout = findViewById(R.id.loginLayout);
         signUpLayout = findViewById(R.id.signLayout);
-        changecolor(loginButton, signButton)
-        val skipButton = findViewById<Button>(R.id.button3)
-        skipButton.setOnClickListener {
-            val intent = Intent(this , ProfilePicture::class.java)
-            startActivity(intent)
+        changecolor(SwitchToLoginButton, SwitchToSignUpButton)
+
+        val LoginInButton = findViewById<Button>(R.id.button3)
+        LoginInButton.setOnClickListener {
+            val email = findViewById<EditText>(R.id.editTextTextEmailAddress).text.toString()
+            val password = findViewById<EditText>(R.id.editTextTextPassword2).text.toString()
+            Toast.makeText(this,"SIGN IN",Toast.LENGTH_LONG).show()
+            FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        Toast.makeText(this,"YES",Toast.LENGTH_LONG).show()
+                    } else {
+                        Toast.makeText(this,"NO",Toast.LENGTH_LONG).show()
+                    }
+                }
+
+        }
+        val SignUpButton = findViewById<Button>(R.id.signupbutton)
+        SignUpButton.setOnClickListener {
+            val email = findViewById<EditText>(R.id.editTextTextEmailAddress2).text.toString()
+            val password = findViewById<EditText>(R.id.editTextTextPassword3).text.toString()
+            Toast.makeText(this,email+password,Toast.LENGTH_SHORT).show()
+            FirebaseAuth.getInstance().createUserWithEmailAndPassword(email,password)
+                .addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        Toast.makeText(this,"YES",Toast.LENGTH_LONG).show()
+                    } else {
+                        Toast.makeText(this,"NO",Toast.LENGTH_LONG).show()
+                    }
+                }
+
         }
 
-        loginButton.setOnClickListener {
+        SwitchToLoginButton.setOnClickListener {
             logIndex++
-            changecolor(loginButton, signButton)
+            changecolor(SwitchToLoginButton, SwitchToSignUpButton)
             loginLayout?.visibility = View.VISIBLE
             signUpLayout?.visibility = GONE
         }
 
-        signButton.setOnClickListener {
+        SwitchToSignUpButton.setOnClickListener {
             signIndex++
-            changecolor(loginButton, signButton)
+            changecolor(SwitchToLoginButton, SwitchToSignUpButton)
             loginLayout?.visibility = GONE
             signUpLayout?.visibility = View.VISIBLE
         }
