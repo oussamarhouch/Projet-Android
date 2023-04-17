@@ -37,7 +37,7 @@ class CommentActivity : AppCompatActivity() {
 
 
 
-                Toast.makeText(this, "Successfully saved", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Successfully saved" , Toast.LENGTH_SHORT).show()
 
 
             }.addOnFailureListener {
