@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/rm218_bb_07">
+
+    <EditText
+        android:id="@+id/add_idea"
+        android:layout_width="305dp"
+        android:layout_height="128dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginBottom="102dp"
+        android:background="@drawable/search_bar_rect"
+        android:backgroundTint="@color/interaction_bar"
+        android:ems="10"
+        android:hint="What's on your mind ?!...."
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/addButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView23" />
+
+    <EditText
+        android:id="@+id/add_title"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="53dp"
+        android:layout_marginEnd="53dp"
+        android:layout_marginBottom="28dp"
+        android:background="@drawable/circle_background"
+        android:backgroundTint="@color/interaction_bar"
+        android:ems="10"
+        android:hint="Give your idea a title "
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/textView23"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView22" />
+
+    <Button
+        android:id="@+id/addButton"
+        android:layout_width="107dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="60dp"
+        android:backgroundTint="@color/purple_200"
+        android:text="Submit"
+        android:textColor="#000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_idea" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="93dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="126dp"
+        android:layout_marginBottom="16dp"
+        android:text="Title"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="#fff"
+        app:layout_constraintBottom_toTopOf="@+id/add_title"
+        app:layout_constraintStart_toStartOf="@+id/add_title"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginBottom="20dp"
+        android:text="Idea"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="#fff"
+        app:layout_constraintBottom_toTopOf="@+id/add_idea"
+        app:layout_constraintStart_toStartOf="@+id/add_idea"
+        app:layout_constraintTop_toBottomOf="@+id/add_title" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

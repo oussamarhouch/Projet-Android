@@ -21,6 +21,13 @@
             android:name=".ProfileActivity"
             android:exported="false" />
         <activity
+            android:name=".AddActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".CommentActivity"
+            android:exported="false"/>
+
+        <activity
             android:name=".ProfilePicture"
             android:exported="true" />
         <activity

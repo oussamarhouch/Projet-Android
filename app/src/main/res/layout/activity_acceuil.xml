@@ -10,9 +10,8 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="420dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="652dp"
+        android:layout_width="429dp"
+        android:layout_height="84dp"
 
         android:background="@drawable/search_bar_rect"
         android:backgroundTint="@color/down_screen_bar"
@@ -25,66 +24,89 @@
         android:textColor="#000000"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-11dp"
+        tools:layout_editor_absoluteY="648dp" />
 
     <ImageView
         android:id="@+id/profile_icon"
         android:layout_width="75dp"
         android:layout_height="85dp"
-        android:layout_marginTop="652dp"
+        android:layout_marginTop="648dp"
 
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.946"
+        app:layout_constraintHorizontal_bias="0.952"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/profileicon" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
-        android:layout_width="415dp"
-        android:layout_height="210dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="140dp"
         android:background="@drawable/rectangle_dark_blue"
-        tools:layout_editor_absoluteX="-3dp"
-        tools:layout_editor_absoluteY="-6dp">
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/notification_icon"
-            android:layout_width="63dp"
-            android:layout_height="63dp"
+            android:layout_width="56dp"
+            android:layout_height="79dp"
 
-            app:srcCompat="@drawable/not"
-            tools:layout_editor_absoluteX="336dp"
-            tools:layout_editor_absoluteY="24dp" />
+            android:layout_marginStart="49dp"
+            android:layout_marginTop="44dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="103dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView13"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/not" />
 
         <TextView
             android:id="@+id/textView13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Salut User!"
+            android:layout_marginStart="124dp"
+            android:layout_marginEnd="49dp"
+            android:text="HelloUser!"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textColor="#ffff"
-            tools:layout_editor_absoluteX="124dp"
-            tools:layout_editor_absoluteY="78dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/notification_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.502" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout3"
-        android:layout_width="412dp"
-        android:layout_height="80dp"
+        android:layout_width="408dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="204dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/search_bar_rect"
         android:backgroundTint="@color/search_color"
-        tools:layout_editor_absoluteX="-1dp"
-        tools:layout_editor_absoluteY="204dp">
+        app:layout_constraintBottom_toTopOf="@+id/textView16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <SearchView
-            android:layout_width="407dp"
-            android:layout_height="54dp"
-            tools:layout_editor_absoluteX="1dp"
-            tools:layout_editor_absoluteY="14dp" />
+            android:id="@+id/searchView"
+            android:layout_width="411dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
@@ -95,84 +117,165 @@
         android:text="Trending"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#ffff"
-        tools:layout_editor_absoluteX="145dp"
-        tools:layout_editor_absoluteY="300dp" />
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+        app:layout_constraintEnd_toEndOf="@+id/constraintLayout2"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout2"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="411dp"
-        android:layout_height="250dp"
+        android:id="@+id/constraintLayout2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="136dp"
         android:background="@drawable/search_bar_rect"
         android:backgroundTint="@color/search_color"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="345dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="413dp"
-            android:layout_height="193dp">
+            android:id="@+id/constraintLayout6"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="3dp"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:id="@+id/textView17"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="84dp"
                 android:text="@string/quote"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                tools:layout_editor_absoluteX="37dp"
-                tools:layout_editor_absoluteY="63dp" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="183dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="121dp"
+                android:fontFamily="sans-serif-black"
+                android:text="@string/Title"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                app:layout_constraintBottom_toTopOf="@+id/textView18"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/textView18"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="4dp"
                 android:fontFamily="sans-serif-black"
                 android:text="@string/username"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textColor="#7c3e78"
-                tools:layout_editor_absoluteX="287dp"
-                tools:layout_editor_absoluteY="146dp" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView19" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="430dp"
-            android:layout_height="51dp"
+            android:id="@+id/constraintLayout7"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="3dp"
             android:background="@drawable/search_bar_rect"
             android:backgroundTint="@color/interaction_bar"
-            tools:layout_editor_absoluteX="-9dp"
-            tools:layout_editor_absoluteY="196dp">
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/constraintLayout6"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout6">
 
             <RatingBar
                 android:id="@+id/ratingBar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:layout_editor_absoluteX="8dp" />
+                android:layout_width="237dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="94dp"
+                android:contentDescription="Select the number of stars based on how much you liked the post
+"
+                app:layout_constraintEnd_toStartOf="@+id/constraintLayout8"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="54dp"
-                android:layout_height="48dp"
+                android:id="@+id/constraintLayout8"
+                android:layout_width="51dp"
+                android:layout_height="49dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="34dp"
+                android:layout_marginBottom="1dp"
                 android:background="@drawable/commentary__2_"
-                tools:layout_editor_absoluteX="343dp"
-                tools:layout_editor_absoluteY="3dp">
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ratingBar"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0">
 
+                <Button
+                    android:id="@+id/commBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/commentary__2_"
+                    android:backgroundTint="@color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="73dp"
-        android:layout_height="73dp"
+        android:id="@+id/constraintLayout5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="171dp"
+        android:layout_marginBottom="3dp"
         android:background="@drawable/plus"
-        tools:layout_editor_absoluteX="167dp"
-        tools:layout_editor_absoluteY="655dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayout4"
+        app:layout_constraintTop_toTopOf="@+id/textView4"
+        app:layout_constraintVertical_bias="1.0">
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/plus"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout4"
-        android:layout_width="81dp"
-        android:layout_height="71dp"
+        android:layout_width="76dp"
+        android:layout_height="76dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="4dp"
         android:background="@drawable/chat"
-        tools:layout_editor_absoluteX="26dp"
-        tools:layout_editor_absoluteY="656dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/constraintLayout5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
+        app:layout_constraintVertical_bias="1.0">
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

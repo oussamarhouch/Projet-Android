@@ -13,6 +13,7 @@ import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import java.util.*
 import android.util.Base64
+import android.widget.Button
 
 
 class AccueilActivity() : AppCompatActivity(), Parcelable {
@@ -24,6 +25,24 @@ class AccueilActivity() : AppCompatActivity(), Parcelable {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_acceuil)
+
+        // ajout du boutton qui nous méne à add (Toubil)
+        val buttonClick = findViewById<Button>(R.id.button5)
+        buttonClick.setOnClickListener {
+            val intent = Intent(this, AddActivity::class.java)
+            startActivity(intent)
+        }
+
+        //ajout du bouton qui nous méne à comment (Toubil)
+        val buttonComment = findViewById<Button>(R.id.commBtn)
+        buttonComment.setOnClickListener {
+            val intent = Intent(this, CommentActivity::class.java)
+            startActivity(intent)
+        }
+
+
+
+
 
         val profileImageView = findViewById<ImageView>(R.id.profile_icon)
         val notificationImageView = findViewById<ImageView>(R.id.notification_icon)
@@ -43,6 +62,9 @@ class AccueilActivity() : AppCompatActivity(), Parcelable {
                 startActivity(intent)
             }
         }
+
+
+
     }
 
 
@@ -84,3 +106,4 @@ class AccueilActivity() : AppCompatActivity(), Parcelable {
         }
     }
 }
+

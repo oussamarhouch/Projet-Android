@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "560039474001",
+    "firebase_url": "https://ideation-nation-f87ec-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "ideation-nation-f87ec",
+    "storage_bucket": "ideation-nation-f87ec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:560039474001:android:949348581990e64e7a9970",
+        "android_client_info": {
+          "package_name": "com.example.ideationnation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "560039474001-ra40kot12ju5m8s57vmdi1uv2ohitvgk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUl5s4I6p4mXZIDC0tSiWH_ohp2KbEqb0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "560039474001-ra40kot12ju5m8s57vmdi1uv2ohitvgk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
