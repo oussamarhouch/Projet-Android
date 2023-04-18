@@ -95,7 +95,7 @@
         android:layout_width="363dp"
         android:layout_height="660dp"
         android:padding="1dp"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.937"
         app:layout_constraintStart_toStartOf="parent"
@@ -208,7 +208,7 @@
             android:layout_width="151dp"
             android:layout_height="26dp"
             android:layout_marginTop="368dp"
-            android:text="Username"
+            android:text="Email"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.184"
@@ -238,7 +238,7 @@
 
         android:layout_marginLeft="4dp"
         android:layout_marginTop="4dp"
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -246,7 +246,7 @@
         tools:ignore="MissingConstraints">
 
         <Button
-            android:id="@+id/loginbutton"
+            android:id="@+id/SwitchTologinButtonBTN"
             android:layout_width="130dp"
             android:layout_height="40dp"
             android:layout_marginLeft="180dp"
@@ -338,7 +338,7 @@
             android:layout_height="26dp"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="272dp"
-            android:text="Username"
+            android:text="Email"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.219"

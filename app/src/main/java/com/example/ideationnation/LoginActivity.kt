@@ -34,13 +34,14 @@ class LoginActivity : AppCompatActivity() {
         LoginInButton.setOnClickListener {
             val email = findViewById<EditText>(R.id.editTextTextEmailAddress).text.toString()
             val password = findViewById<EditText>(R.id.editTextTextPassword2).text.toString()
-            Toast.makeText(this,"SIGN IN",Toast.LENGTH_LONG).show()
             FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
-                        Toast.makeText(this,"YES",Toast.LENGTH_LONG).show()
+                        Toast.makeText(this,"Success",Toast.LENGTH_LONG).show()
+                        val intent = Intent(this,ProfileActivity::class.java)
+                        startActivity(intent)
                     } else {
-                        Toast.makeText(this,"NO",Toast.LENGTH_LONG).show()
+                        Toast.makeText(this,"Something Wrong",Toast.LENGTH_LONG).show()
                     }
                 }
 
@@ -49,13 +50,14 @@ class LoginActivity : AppCompatActivity() {
         SignUpButton.setOnClickListener {
             val email = findViewById<EditText>(R.id.editTextTextEmailAddress2).text.toString()
             val password = findViewById<EditText>(R.id.editTextTextPassword3).text.toString()
-            Toast.makeText(this,email+password,Toast.LENGTH_SHORT).show()
             FirebaseAuth.getInstance().createUserWithEmailAndPassword(email,password)
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
-                        Toast.makeText(this,"YES",Toast.LENGTH_LONG).show()
+                        Toast.makeText(this,"Success",Toast.LENGTH_LONG).show()
+                        val intent = Intent(this,ProfileActivity::class.java)
+                        startActivity(intent)
                     } else {
-                        Toast.makeText(this,"NO",Toast.LENGTH_LONG).show()
+                        Toast.makeText(this,"Something Wrong",Toast.LENGTH_LONG).show()
                     }
                 }
 
@@ -73,6 +75,13 @@ class LoginActivity : AppCompatActivity() {
             changecolor(SwitchToLoginButton, SwitchToSignUpButton)
             loginLayout?.visibility = GONE
             signUpLayout?.visibility = View.VISIBLE
+        }
+        val SwitchTologinButtonBTN = findViewById<Button>(R.id.SwitchTologinButtonBTN)
+        SwitchTologinButtonBTN.setOnClickListener {
+            logIndex++
+            changecolor(SwitchToLoginButton, SwitchToSignUpButton)
+            loginLayout?.visibility = View.VISIBLE
+            signUpLayout?.visibility = GONE
         }
     }
 
