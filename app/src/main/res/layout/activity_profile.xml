@@ -109,7 +109,7 @@
 
 
     <TextView
-        android:id="@+id/Aboutme"
+        android:id="@+id/passwordedittext"
         android:layout_width="335dp"
         android:layout_height="46dp"
         android:layout_marginLeft="15dp"
@@ -249,15 +249,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="409dp"
         android:layout_height="227dp"
-        android:layout_marginTop="512dp"
+        android:layout_marginTop="492dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />

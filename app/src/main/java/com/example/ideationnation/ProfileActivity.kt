@@ -11,11 +11,9 @@ import android.provider.MediaStore
 import android.util.Base64
 import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*
 import android.util.Log
 import android.widget.*
@@ -121,7 +119,7 @@ class ProfileActivity : AppCompatActivity() {
         Log.d("MyApp", "Bio: $bio")
         Log.d("MyApp", "Name: $name")
         findViewById<TextView>(R.id.username)?.text = username
-        findViewById<TextView>(R.id.Aboutme)?.setText(bio)
+        findViewById<TextView>(R.id.passwordedittext)?.setText(bio)
         findViewById<TextView>(R.id.name)?.text = name
     }
 

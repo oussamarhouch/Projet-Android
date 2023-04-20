@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity"
-    android:background="#E2010529">
+    android:background="#E2010529"
+    tools:context=".LoginActivity">
 
     <ImageView
         android:id="@+id/profile_image"
@@ -14,7 +14,7 @@
         android:layout_marginTop="72dp"
         android:src="@drawable/profile"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.445"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -42,22 +42,22 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.74"
 
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView9"
-        android:layout_width="284dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="384dp"
+        android:layout_width="119dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="380dp"
         android:text=" know it's you"
         android:textColor="#BFBDBD"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.544"
 
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -101,14 +101,23 @@
         android:layout_marginTop="648dp"
         android:backgroundTint="#A8010529"
         android:text="confirmer"
-        android:visibility="gone"
         android:textColor="#BFBDBD"
         android:textStyle="bold"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.949"
         app:layout_constraintStart_toStartOf="parent"
 
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="113dp"
+        android:layout_height="155dp"
+        android:layout_marginStart="156dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/logo"
+        tools:layout_editor_absoluteY="574dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

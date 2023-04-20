@@ -54,7 +54,7 @@ class LoginActivity : AppCompatActivity() {
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
                         Toast.makeText(this,"Success",Toast.LENGTH_LONG).show()
-                        val intent = Intent(this,ProfileActivity::class.java)
+                        val intent = Intent(this,ProfilePicture::class.java)
                         startActivity(intent)
                     } else {
                         Toast.makeText(this,"Something Wrong",Toast.LENGTH_LONG).show()
