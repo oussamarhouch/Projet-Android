@@ -1,49 +1,91 @@
 package com.example.ideationnation
+
 import android.util.Base64
-import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.Context
-import android.content.DialogInterface
 import android.content.Intent
 import android.graphics.*
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
-import android.view.View
+import android.util.Log
 import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.ideationnation.R.id.confirm
 import java.io.ByteArrayOutputStream
-import java.util.*
 
 
-class ProfilePicture : AppCompatActivity() {
-
+class EditProfileActivity : AppCompatActivity() {
     companion object {
         const val REQUEST_IMAGE_GALLERY = 100
         const val REQUEST_IMAGE_CAPTURE = 101
     }
 
     private var profileImageView: ImageView? = null
+    private var nameEditText: EditText? = null
+    private var bioEditText: EditText? = null
+    private var usernameEditText: EditText? = null
 
-    @SuppressLint("CutPasteId", "MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_profile_picture)
+        setContentView(R.layout.activity_edit_profile)
 
-        profileImageView = findViewById(R.id.profile_image)
-        showImageSelectionDialog()
-
-        findViewById<Button>(R.id.Add_photo).setOnClickListener { showImageSelectionDialog() }
-
-        findViewById<Button>(R.id.skip).setOnClickListener {
-            val intent = Intent(this, AccueilActivity::class.java)
+        nameEditText = findViewById(R.id.editEmail)
+        bioEditText = findViewById(R.id.editPassword)
+        usernameEditText = findViewById(R.id.editusername)
+        loadUserData()
+        profileImageView = findViewById(R.id.edit_profile_image)
+        showCurrentProfileImage()
+        findViewById<ImageView>(R.id.x).setOnClickListener {
+            val intent = Intent(this, ProfileActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
+        findViewById<ImageView>(R.id.check).setOnClickListener {
+            saveUserData()
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+        findViewById<Button>(R.id.Edit_picture).setOnClickListener { showImageSelectionDialog() }
+    }
+    private fun loadUserData() {
+        val sharedPrefs = getSharedPreferences("my_app_prefs", MODE_PRIVATE)
+        val name = sharedPrefs.getString("name", "")
+        val bio = sharedPrefs.getString("bio", "")
+        val username = sharedPrefs.getString("username", "")
+        nameEditText?.setText(name)
+        bioEditText?.setText(bio)
+        usernameEditText?.setText(username)
     }
 
+    private fun saveUserData() {
+        val sharedPrefs = getSharedPreferences("my_app_prefs", MODE_PRIVATE)
+        val editor = sharedPrefs.edit()
+        val name = nameEditText?.text.toString()
+        val bio = bioEditText?.text.toString()
+        val username = usernameEditText?.text.toString()
+        Log.d("MyApp", "Name: $name")
+        Log.d("MyApp", "Bio: $bio")
+        Log.d("MyApp", "Username: $username")
+        editor.putString("name", name)
+        editor.putString("bio", bio)
+        editor.putString("username", username)
+        editor.apply()
+    }
+
+    private fun showCurrentProfileImage() {
+        val sharedPrefs = getSharedPreferences("my_app_prefs", MODE_PRIVATE)
+        val imageUriString = sharedPrefs.getString("profile_image_uri", "")
+        if (!imageUriString.isNullOrEmpty()) {
+            val imageUri = Uri.parse(imageUriString)
+            val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, imageUri)
+            val circularBitmap = getRoundedBitmap(bitmap)
+            profileImageView?.setImageBitmap(circularBitmap)
+        }
+    }
     private fun showImageSelectionDialog() {
         AlertDialog.Builder(this)
             .setTitle("Choose an option")
@@ -55,26 +97,24 @@ class ProfilePicture : AppCompatActivity() {
             }
             .show()
     }
-
     private fun selectImageFromGallery() {
         val intent = Intent(Intent.ACTION_GET_CONTENT)
         intent.type = "image/*"
-        startActivityForResult(intent, REQUEST_IMAGE_GALLERY)
+        startActivityForResult(intent, ProfilePicture.REQUEST_IMAGE_GALLERY)
     }
 
     private fun takeImageFromCamera() {
         Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { takePictureIntent ->
             takePictureIntent.resolveActivity(packageManager)?.also {
-                startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE)
+                startActivityForResult(takePictureIntent, ProfilePicture.REQUEST_IMAGE_CAPTURE)
             }
         }
     }
-
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == RESULT_OK) {
             when (requestCode) {
-                REQUEST_IMAGE_GALLERY -> {
+                ProfilePicture.REQUEST_IMAGE_GALLERY -> {
                     if (data != null) {
                         val imageUri = data.data
                         if (imageUri != null) { // Vérification si imageUri est non nul
@@ -88,16 +128,11 @@ class ProfilePicture : AppCompatActivity() {
                             editor.apply()
 
                             profileImageView?.setImageBitmap(circularBitmap)
-                            val confirmButton = findViewById<Button>(R.id.confirm)
-                            confirmButton?.visibility = View.VISIBLE
-                            confirmButton.setOnClickListener {
-                                val intent = Intent(this, AccueilActivity::class.java)
-                                startActivity(intent)
-                            }
+
                         }
                     }
                 }
-                REQUEST_IMAGE_CAPTURE -> {
+                ProfilePicture.REQUEST_IMAGE_CAPTURE -> {
                     if (data != null && data.extras != null) {
                         val imageBitmap = data.extras!!.get("data") as Bitmap?
                         val circularBitmap = getRoundedBitmap(imageBitmap!!)
@@ -138,3 +173,6 @@ class ProfilePicture : AppCompatActivity() {
 
 
 }
+
+
+

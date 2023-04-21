@@ -1,34 +1,56 @@
 {
   "project_info": {
+<<<<<<< HEAD
     "project_number": "560039474001",
     "firebase_url": "https://ideation-nation-f87ec-default-rtdb.europe-west1.firebasedatabase.app",
     "project_id": "ideation-nation-f87ec",
     "storage_bucket": "ideation-nation-f87ec.appspot.com"
+=======
+    "project_number": "189008713779",
+    "project_id": "ideation-nation-b83f9",
+    "storage_bucket": "ideation-nation-b83f9.appspot.com"
+>>>>>>> 8bbee5d70e3748f8e2e23217eeb72a0f75196334
   },
   "client": [
     {
       "client_info": {
+<<<<<<< HEAD
         "mobilesdk_app_id": "1:560039474001:android:949348581990e64e7a9970",
+=======
+        "mobilesdk_app_id": "1:189008713779:android:70aefa5be51702c2c72b46",
+>>>>>>> 8bbee5d70e3748f8e2e23217eeb72a0f75196334
         "android_client_info": {
           "package_name": "com.example.ideationnation"
         }
       },
       "oauth_client": [
         {
+<<<<<<< HEAD
           "client_id": "560039474001-ra40kot12ju5m8s57vmdi1uv2ohitvgk.apps.googleusercontent.com",
+=======
+          "client_id": "189008713779-cfj2se4hno9bc1jsea04pm479ovsjm5b.apps.googleusercontent.com",
+>>>>>>> 8bbee5d70e3748f8e2e23217eeb72a0f75196334
           "client_type": 3
         }
       ],
       "api_key": [
         {
+<<<<<<< HEAD
           "current_key": "AIzaSyDUl5s4I6p4mXZIDC0tSiWH_ohp2KbEqb0"
+=======
+          "current_key": "AIzaSyB-w_eQkTpuovfGUZqtVKQkSw4YURE2oHs"
+>>>>>>> 8bbee5d70e3748f8e2e23217eeb72a0f75196334
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
+<<<<<<< HEAD
               "client_id": "560039474001-ra40kot12ju5m8s57vmdi1uv2ohitvgk.apps.googleusercontent.com",
+=======
+              "client_id": "189008713779-cfj2se4hno9bc1jsea04pm479ovsjm5b.apps.googleusercontent.com",
+>>>>>>> 8bbee5d70e3748f8e2e23217eeb72a0f75196334
               "client_type": 3
             }
           ]

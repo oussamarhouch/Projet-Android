@@ -56,7 +56,6 @@
         android:paddingTop="50dp"
         android:paddingEnd="10dp"
         android:radius="100dp"
-
         android:textColor="#000000"
         android:textSize="30sp"
         android:textStyle="bold"
