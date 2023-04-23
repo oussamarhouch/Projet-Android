@@ -76,13 +76,13 @@ class LoginActivity : AppCompatActivity() {
             loginLayout?.visibility = GONE
             signUpLayout?.visibility = View.VISIBLE
         }
-        val SwitchTologinButtonBTN = findViewById<Button>(R.id.SwitchTologinButtonBTN)
+        /*val SwitchTologinButtonBTN = findViewById<Button>(R.id.SwitchTologinButtonBTN)
         SwitchTologinButtonBTN.setOnClickListener {
             logIndex++
             changecolor(SwitchToLoginButton, SwitchToSignUpButton)
             loginLayout?.visibility = View.VISIBLE
             signUpLayout?.visibility = GONE
-        }
+        }*/
     }
 
     private fun changecolor(loginButton: Button, signButton: Button) {

@@ -61,9 +61,6 @@ class ProfileActivity : AppCompatActivity() {
         recyclerView.adapter = adapter
 
 
-        getArticlesByUserId(user?.uid ?: "", "date DESC") { articles ->
-            adapter.setArticles(articles)
-        }
 
         val sortOptions = arrayOf(
 
@@ -89,22 +86,23 @@ class ProfileActivity : AppCompatActivity() {
             override fun onNothingSelected(parent: AdapterView<*>?) {}
         }
     }
-    private fun getArticlesByUserId(userId: String, sortBy: String, callback: (List<Article>) -> Unit) {
+    private fun getArticlesByUserId(userId: String, sortBy: String, callback: (List<Idea>) -> Unit) {
         val query = database.child("articles").orderByChild("userId").equalTo(userId)
         query.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val articles = mutableListOf<Article>()
+                val articles = mutableListOf<Idea>()
                 for (articleSnapshot in dataSnapshot.children) {
-                    val article = articleSnapshot.getValue(Article::class.java)
+                    val article = articleSnapshot.getValue(Idea::class.java)
                     if (article != null) {
                         articles.add(article)
                     }
                 }
                 when (sortBy) {
-                    "date" -> articles.sortBy { it.date }
+
+
                     "title" -> articles.sortBy { it.title }
-                    "title DESC" -> articles.sortByDescending { it.title }
-                    else -> articles.sortByDescending { it.date }
+
+                    else -> articles.sortByDescending { it.title }
                 }
                 callback(articles)
             }
