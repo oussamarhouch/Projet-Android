@@ -38,8 +38,10 @@ class ProfilePicture : AppCompatActivity() {
         findViewById<Button>(R.id.Add_photo).setOnClickListener { showImageSelectionDialog() }
 
         findViewById<Button>(R.id.skip).setOnClickListener {
-            startActivity(Intent(this, AccueilActivity::class.java))
+            val intent = Intent(this, AccueilActivity::class.java)
+            startActivity(intent)
         }
+
     }
 
     private fun showImageSelectionDialog() {
@@ -75,21 +77,23 @@ class ProfilePicture : AppCompatActivity() {
                 REQUEST_IMAGE_GALLERY -> {
                     if (data != null) {
                         val imageUri = data.data
-                        val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, imageUri)
-                        val circularBitmap = getRoundedBitmap(bitmap)
+                        if (imageUri != null) { // Vérification si imageUri est non nul
+                            val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, imageUri)
+                            val circularBitmap = getRoundedBitmap(bitmap)
 
-                        val sharedPrefs = getSharedPreferences("my_app_prefs", Context.MODE_PRIVATE)
-                        val editor = sharedPrefs.edit()
-                        editor.putString("profile_image_uri", imageUri.toString())
-                        editor.putString("profile_image_circular", encodeBitmap(circularBitmap))
-                        editor.apply()
+                            val sharedPrefs = getSharedPreferences("my_app_prefs", Context.MODE_PRIVATE)
+                            val editor = sharedPrefs.edit()
+                            editor.putString("profile_image_uri", imageUri.toString())
+                            editor.putString("profile_image_circular", encodeBitmap(circularBitmap))
+                            editor.apply()
 
-                        profileImageView?.setImageBitmap(circularBitmap)
-                        val confirmButton = findViewById<Button>(R.id.confirm)
-                        confirmButton?.visibility = View.VISIBLE
-                        confirmButton.setOnClickListener {
-                            val intent = Intent(this, AccueilActivity::class.java)
-                            startActivity(intent)
+                            profileImageView?.setImageBitmap(circularBitmap)
+                            val confirmButton = findViewById<Button>(R.id.confirm)
+                            confirmButton?.visibility = View.VISIBLE
+                            confirmButton.setOnClickListener {
+                                val intent = Intent(this, AccueilActivity::class.java)
+                                startActivity(intent)
+                            }
                         }
                     }
                 }
