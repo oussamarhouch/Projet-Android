@@ -11,9 +11,11 @@ import android.provider.MediaStore
 import android.util.Base64
 import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*
 import android.util.Log
 import android.widget.*
@@ -44,6 +46,11 @@ class ProfileActivity : AppCompatActivity() {
             val intent = Intent(this, EditProfileActivity::class.java)
             startActivity(intent)
         }
+        val user = FirebaseAuth.getInstance().currentUser
+        if (user != null) {
+            findViewById<TextView>(R.id.username)?.text = user.displayName
+        }
+
         showUserData()
         layoutInflater = LayoutInflater.from(this@ProfileActivity)
         database = FirebaseDatabase.getInstance().reference
@@ -53,16 +60,16 @@ class ProfileActivity : AppCompatActivity() {
         recyclerView.layoutManager = layoutManager
         recyclerView.adapter = adapter
 
-        val user = FirebaseAuth.getInstance().currentUser
+
         getArticlesByUserId(user?.uid ?: "", "date DESC") { articles ->
             adapter.setArticles(articles)
         }
 
         val sortOptions = arrayOf(
-            "Par date (ascendant)",
+
             "Par titre (ascendant)",
-            "Par titre (descendant)",
-            "Par date (descendant)"
+            "Par titre (descendant)"
+
         )
 
         spinnerSort = findViewById(R.id.spinner)
@@ -70,10 +77,9 @@ class ProfileActivity : AppCompatActivity() {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 val selectedOption = sortOptions[position]
                 val sortBy = when (selectedOption) {
-                    "Par date (ascendant)" -> "date"
+
                     "Par titre (ascendant)" -> "title"
-                    "Par titre (descendant)" -> "title DESC"
-                    else -> "date DESC"
+                    else -> "title DESC"
                 }
                 getArticlesByUserId(user?.uid ?: "", sortBy) { articles ->
                     adapter.setArticles(articles)
@@ -119,7 +125,7 @@ class ProfileActivity : AppCompatActivity() {
         Log.d("MyApp", "Bio: $bio")
         Log.d("MyApp", "Name: $name")
         findViewById<TextView>(R.id.username)?.text = username
-        findViewById<TextView>(R.id.passwordedittext)?.setText(bio)
+        findViewById<TextView>(R.id.Aboutme)?.setText(bio)
         findViewById<TextView>(R.id.name)?.text = name
     }
 

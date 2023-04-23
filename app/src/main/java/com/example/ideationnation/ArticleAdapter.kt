@@ -1,5 +1,8 @@
-package com.example.ideationnation
 
+
+package  com.example.ideationnation
+import com.example.ideationnation.Idea
+import com.example.ideationnation.R
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,13 +10,13 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class ArticleAdapter : RecyclerView.Adapter<ArticleAdapter.ArticleViewHolder>() {
-    private var articles = emptyList<Article>()
+    private var articles = emptyList<Idea>()
 
     inner class ArticleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(article: Article) {
+        fun bind(article:Idea) {
             itemView.findViewById<TextView>(R.id.title_text_view).text = article.title
-            itemView.findViewById<TextView>(R.id.date_text_view).text = article.date
-            itemView.findViewById<TextView>(R.id.contentent_text_view).text = article.content
+
+            itemView.findViewById<TextView>(R.id.contentent_text_view).text = article.myIdea
         }
 
     }
@@ -32,7 +35,7 @@ class ArticleAdapter : RecyclerView.Adapter<ArticleAdapter.ArticleViewHolder>() 
         return articles.size
     }
 
-    fun setArticles(articles: List<Article>) {
+    fun setArticles(articles: List<Idea>) {
         this.articles = articles
         notifyDataSetChanged()
     }

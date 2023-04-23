@@ -10,14 +10,14 @@
         android:id="@+id/edit_profile"
         android:layout_width="142dp"
         android:layout_height="39dp"
-        android:layout_marginTop="348dp"
+        android:layout_marginTop="376dp"
         android:backgroundTint="#6ac4da"
         android:text="Edit profile"
 
         android:textColor="#E2010529"
 
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.205"
+        app:layout_constraintHorizontal_bias="0.197"
         app:layout_constraintStart_toStartOf="parent"
 
         app:layout_constraintTop_toTopOf="parent" />
@@ -93,11 +93,11 @@
         app:srcCompat="@drawable/id1" />
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/name"
         android:layout_width="145dp"
         android:layout_height="33dp"
         android:layout_marginTop="180dp"
-        android:text="Name"
+        android:text=""
         android:textColor="#000000"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -106,6 +106,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/id1" />
+
+
+    <TextView
+        android:id="@+id/Aboutme"
+        android:layout_width="335dp"
+        android:layout_height="46dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="340dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="LabelFor" />
 
     <TextView
         android:id="@+id/posts_nbr"
@@ -198,6 +214,33 @@
         app:srcCompat="@drawable/id1" />
 
     <TextView
+        android:id="@+id/username"
+        android:layout_width="145dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="140dp"
+        android:text=""
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.808"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/id1" />
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="145dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="180dp"
+        android:text="Name"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.808"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/id1" />
+    <TextView
         android:id="@+id/textView14"
         android:layout_width="145dp"
         android:layout_height="33dp"
@@ -210,12 +253,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/id1" />
-
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/profile_picture"
         android:layout_width="147dp"
         android:layout_height="148dp"
-        android:layout_marginTop="104dp"
+        android:layout_marginTop="124dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.109"
         app:layout_constraintStart_toStartOf="parent"
@@ -231,4 +273,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="409dp"
+        android:layout_height="227dp"
+        android:layout_marginTop="512dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+

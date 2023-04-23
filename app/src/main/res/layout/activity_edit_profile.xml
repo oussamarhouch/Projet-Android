@@ -54,19 +54,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.constraintlayout.widget.Group
-        android:id="@+id/group"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:constraint_referenced_ids="Name,editEmail,passwordedittext,editAboutme2,editusername,Username,editPassword,aboutme" />
-
     <TextView
         android:id="@+id/Name"
         android:layout_width="151dp"
         android:layout_height="26dp"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="212dp"
-        android:text="Email"
+        android:text="Name"
 
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -76,7 +70,7 @@
 
 
     <EditText
-        android:id="@+id/editEmail"
+        android:id="@+id/editName"
         android:layout_width="333dp"
         android:layout_height="47dp"
         android:layout_marginLeft="15dp"
@@ -91,24 +85,11 @@
         tools:ignore="LabelFor" />
 
     <TextView
-        android:id="@+id/passwordedittext"
+        android:id="@+id/Aboutme"
         android:layout_width="215dp"
         android:layout_height="24dp"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="356dp"
-        android:text="Password"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.081"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/aboutme"
-        android:layout_width="215dp"
-        android:layout_height="24dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="424dp"
         android:text="About me"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -145,30 +126,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editPassword"
+        android:id="@+id/editAboutme"
         android:layout_width="335dp"
         android:layout_height="46dp"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="380dp"
         android:autofillHints=""
         android:ems="10"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-
-        app:layout_constraintHorizontal_bias="0.21"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="LabelFor" />
-
-    <EditText
-        android:id="@+id/editAboutme2"
-        android:layout_width="335dp"
-        android:layout_height="46dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="448dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:inputType="text"
+        android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
 
         app:layout_constraintHorizontal_bias="0.21"
@@ -178,4 +143,3 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
