@@ -409,5 +409,3 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/github" />
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-

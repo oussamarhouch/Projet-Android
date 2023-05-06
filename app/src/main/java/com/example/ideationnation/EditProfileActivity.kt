@@ -17,6 +17,7 @@ import android.widget.EditText
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.ideationnation.R.id.confirm
+import com.google.firebase.auth.FirebaseAuth
 import java.io.ByteArrayOutputStream
 import java.util.*
 
@@ -39,6 +40,7 @@ class EditProfileActivity : AppCompatActivity() {
         nameEditText = findViewById(R.id.editName)
         bioEditText = findViewById(R.id.editAboutme)
         usernameEditText = findViewById(R.id.editusername)
+
         loadUserData()
         profileImageView = findViewById(R.id.edit_profile_image)
         showCurrentProfileImage()
@@ -77,7 +79,6 @@ class EditProfileActivity : AppCompatActivity() {
         Log.d("MyApp", "Username: $username")
         editor.putString("name", name)
         editor.putString("bio", bio)
-        editor.putString("username", username)
         editor.apply()
     }
 

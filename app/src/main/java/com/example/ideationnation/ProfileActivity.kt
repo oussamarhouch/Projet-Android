@@ -5,20 +5,19 @@ import android.content.ContentValues.TAG
 import android.content.Intent
 import android.graphics.*
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Base64
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*
-import android.util.Log
-import android.widget.*
 
 class ProfileActivity : AppCompatActivity() {
 
@@ -32,6 +31,7 @@ class ProfileActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
+
         val profileImageView = findViewById<ImageView>(R.id.profile_picture)
         val sharedPrefs = getSharedPreferences("my_app_prefs", MODE_PRIVATE)
         val imageUriString = sharedPrefs.getString("profile_image_uri", "")
@@ -41,17 +41,18 @@ class ProfileActivity : AppCompatActivity() {
             val circularBitmap = getRoundedBitmap(bitmap)
             profileImageView.setImageBitmap(circularBitmap)
         }
+
+
         val editButton = findViewById<Button>(R.id.edit_profile)
         editButton.setOnClickListener {
             val intent = Intent(this, EditProfileActivity::class.java)
             startActivity(intent)
         }
-        val user = FirebaseAuth.getInstance().currentUser
-        if (user != null) {
-            findViewById<TextView>(R.id.username)?.text = user.displayName
-        }
 
+
+        saveUserData()
         showUserData()
+
         layoutInflater = LayoutInflater.from(this@ProfileActivity)
         database = FirebaseDatabase.getInstance().reference
         adapter = ArticleAdapter()
@@ -60,13 +61,9 @@ class ProfileActivity : AppCompatActivity() {
         recyclerView.layoutManager = layoutManager
         recyclerView.adapter = adapter
 
-
-
         val sortOptions = arrayOf(
-
             "Par titre (ascendant)",
             "Par titre (descendant)"
-
         )
 
         spinnerSort = findViewById(R.id.spinner)
@@ -74,10 +71,11 @@ class ProfileActivity : AppCompatActivity() {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 val selectedOption = sortOptions[position]
                 val sortBy = when (selectedOption) {
-
                     "Par titre (ascendant)" -> "title"
                     else -> "title DESC"
                 }
+
+                val user = FirebaseAuth.getInstance().currentUser
                 getArticlesByUserId(user?.uid ?: "", sortBy) { articles ->
                     adapter.setArticles(articles)
                 }
@@ -113,7 +111,17 @@ class ProfileActivity : AppCompatActivity() {
             }
         })
     }
+    private fun saveUserData() {
+        val sharedPrefs = getSharedPreferences("my_app_prefs", MODE_PRIVATE)
+        val editor = sharedPrefs.edit()
+        val user = FirebaseAuth.getInstance().currentUser
+        if (user != null) {
+            val username = user.email
+            editor.putString("username", username)
+            editor.apply()
+        }
 
+    }
     private fun showUserData() {
         val sharedPrefs = getSharedPreferences("my_app_prefs", MODE_PRIVATE)
         val username = sharedPrefs.getString("username", "")
@@ -126,6 +134,7 @@ class ProfileActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.Aboutme)?.setText(bio)
         findViewById<TextView>(R.id.name)?.text = name
     }
+
 
 
 
