@@ -3,29 +3,21 @@ package com.example.ideationnation
 import android.app.Dialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.UserHandle
 import android.widget.Button
 import android.widget.Toast
-import com.example.ideationnation.R
 import com.example.ideationnation.databinding.ActivityAddIdeaBinding
-import com.example.ideationnation.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.firestore.auth.User
-import com.google.firebase.storage.StorageReference
 
 class AddActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityAddIdeaBinding
     private lateinit var auth : FirebaseAuth
     private lateinit var database: DatabaseReference
-    private lateinit var storageReference: StorageReference
+
     private lateinit var dialog: Dialog
-    private lateinit var user: User
     private lateinit var uid :String
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,11 +51,5 @@ class AddActivity : AppCompatActivity() {
 
 
         }
-
-
-
-
-
-
     }
 }
