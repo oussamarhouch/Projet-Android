@@ -6,12 +6,12 @@ import android.os.Bundle
 import android.os.UserHandle
 import android.widget.Button
 import android.widget.Toast
+import androidx.annotation.NonNull
 import com.example.ideationnation.R
 import com.example.ideationnation.databinding.ActivityAddIdeaBinding
 import com.example.ideationnation.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.*
 import com.google.firebase.firestore.auth.User
 import com.google.firebase.storage.StorageReference
 
@@ -36,14 +36,29 @@ class AddActivity : AppCompatActivity() {
         binding.addButton.setOnClickListener {
             val myIdea = binding.addIdea.text.toString()
             val title=binding.addTitle.text.toString()
-
+            var id: Long = 0
             //ajout de uid
             auth = FirebaseAuth.getInstance()
             uid = auth.currentUser?.uid.toString()
 
+            // ajout de id pour idée
+            val valueEventListener = object : ValueEventListener {
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    if (dataSnapshot.exists()) {
+                         id = (dataSnapshot.getChildrenCount())
+
+                    }
+                }
+
+                override fun onCancelled(databaseError: DatabaseError) {
+
+                }
+            }
+
+
 
             database=FirebaseDatabase.getInstance("https://ideation-nation-f87ec-default-rtdb.europe-west1.firebasedatabase.app").getReference("myIdeas")
-            val idea= Idea(title, myIdea,uid)
+            val idea= Idea(title, myIdea,uid, id)
             database.child(title).setValue(idea).addOnSuccessListener {
 
                 binding.addIdea.text.clear()
