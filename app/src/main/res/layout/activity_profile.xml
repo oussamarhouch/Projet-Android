@@ -265,14 +265,7 @@
         app:srcCompat="@drawable/profileicon"
         tools:ignore="MissingConstraints" />
 
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="415dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="472dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
 
 
 

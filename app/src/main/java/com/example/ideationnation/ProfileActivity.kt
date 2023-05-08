@@ -1,8 +1,10 @@
 package com.example.ideationnation
+import android.Manifest
 
 import android.annotation.SuppressLint
 import android.content.ContentValues.TAG
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.graphics.*
 import android.net.Uri
 import android.os.Bundle
@@ -13,24 +15,33 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*
+import com.google.firebase.firestore.FirebaseFirestore
 
 class ProfileActivity : AppCompatActivity() {
+    private val REQUEST_CODE = 1001
 
-    private lateinit var database: DatabaseReference
+    private lateinit var database:  DatabaseReference
+
     private lateinit var adapter: ArticleAdapter
     private lateinit var recyclerView: RecyclerView
-    private lateinit var spinnerSort: Spinner
+
     private lateinit var layoutInflater: LayoutInflater
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
+        val permission = Manifest.permission.READ_EXTERNAL_STORAGE
+        if (ContextCompat.checkSelfPermission(this, permission) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, arrayOf(permission), REQUEST_CODE)
+        }
+
 
         val profileImageView = findViewById<ImageView>(R.id.profile_picture)
         val sharedPrefs = getSharedPreferences("my_app_prefs", MODE_PRIVATE)
@@ -54,7 +65,8 @@ class ProfileActivity : AppCompatActivity() {
         showUserData()
 
         layoutInflater = LayoutInflater.from(this@ProfileActivity)
-        database = FirebaseDatabase.getInstance().reference
+        database=FirebaseDatabase.getInstance("https://ideation-nation-b83f9-default-rtdb.firebaseio.com").getReference("myIdeas")
+
         adapter = ArticleAdapter()
         recyclerView = findViewById(R.id.recyclerView)
         val layoutManager = GridLayoutManager(this, 2)
@@ -66,42 +78,34 @@ class ProfileActivity : AppCompatActivity() {
             "Par titre (descendant)"
         )
 
-        spinnerSort = findViewById(R.id.spinner)
-        spinnerSort.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                val selectedOption = sortOptions[position]
-                val sortBy = when (selectedOption) {
-                    "Par titre (ascendant)" -> "title"
-                    else -> "title DESC"
-                }
+
 
                 val user = FirebaseAuth.getInstance().currentUser
-                getArticlesByUserId(user?.uid ?: "", sortBy) { articles ->
+                getArticlesByUserId(user?.uid ?: "") { articles ->
                     adapter.setArticles(articles)
                 }
-            }
 
-            override fun onNothingSelected(parent: AdapterView<*>?) {}
+
+
         }
-    }
-    private fun getArticlesByUserId(userId: String, sortBy: String, callback: (List<Idea>) -> Unit) {
-        val query = database.child("myIdeas").orderByChild("userId").equalTo(userId)
-        query.addListenerForSingleValueEvent(object : ValueEventListener {
+
+    private fun getArticlesByUserId(userId: String,  callback: (List<Idea>) -> Unit) {
+
+        database.orderByChild("userId").equalTo(userId).addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
+
+
                 val articles = mutableListOf<Idea>()
                 for (articleSnapshot in dataSnapshot.children) {
+
+
                     val article = articleSnapshot.getValue(Idea::class.java)
                     if (article != null) {
                         articles.add(article)
                     }
                 }
-                when (sortBy) {
+                Log.d("MyApp", "Nombre d'idées récupérées : " + articles.size)
 
-
-                    "title" -> articles.sortBy { it.title }
-
-                    else -> articles.sortByDescending { it.title }
-                }
                 callback(articles)
             }
 
