@@ -14,6 +14,8 @@ import androidx.appcompat.app.AppCompatActivity
 import java.util.*
 import android.util.Base64
 import android.widget.Button
+import android.widget.RatingBar
+import android.widget.Toast
 
 
 class AccueilActivity() : AppCompatActivity(), Parcelable {
@@ -62,7 +64,14 @@ class AccueilActivity() : AppCompatActivity(), Parcelable {
                 startActivity(intent)
             }
         }
+        //ajout rating bar
 
+        val myRatingBar = findViewById<RatingBar>(R.id.ratingBar)
+        myRatingBar.stepSize =.25f
+        myRatingBar.setOnRatingBarChangeListener { ratingBar, rating, fromUser ->
+            Toast.makeText(this, "Rated: $rating !", Toast.LENGTH_SHORT).show()
+
+        }
 
 
     }
@@ -104,6 +113,8 @@ class AccueilActivity() : AppCompatActivity(), Parcelable {
         override fun newArray(size: Int): Array<AccueilActivity?> {
             return arrayOfNulls(size)
         }
+
+
     }
 }
 

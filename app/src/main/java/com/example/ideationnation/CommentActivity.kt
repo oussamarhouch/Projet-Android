@@ -25,7 +25,7 @@ class CommentActivity : AppCompatActivity() {
             val comment_string = binding.addComment.text.toString()
 
             database =
-                FirebaseDatabase.getInstance("https://ideation-nation-f87ec-default-rtdb.europe-west1.firebasedatabase.app")
+                FirebaseDatabase.getInstance("https://ideation-nation-b83f9-default-rtdb.firebaseio.com")
                     .getReference("Comments")
             val comment = Comment(comment_string)
             database.child(comment_string).setValue(comment).addOnSuccessListener {
