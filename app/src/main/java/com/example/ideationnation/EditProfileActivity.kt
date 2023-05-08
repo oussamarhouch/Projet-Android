@@ -1,25 +1,20 @@
 package com.example.ideationnation
 
 import android.util.Base64
-import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.Context
-import android.content.DialogInterface
 import android.content.Intent
 import android.graphics.*
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.ideationnation.R.id.confirm
-import com.google.firebase.auth.FirebaseAuth
+import com.example.ideationnation.data.ProfileActivity
 import java.io.ByteArrayOutputStream
-import java.util.*
 
 
 class EditProfileActivity : AppCompatActivity() {

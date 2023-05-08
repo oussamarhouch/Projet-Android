@@ -1,12 +1,8 @@
 package com.example.ideationnation
 
-
 data class Idea(
-
-    val title: String,
-    val myIdea: String,
-    val userId: String,
-    val idea_id: String?,
+    var title: String ?= null,
+    var myIdea: String ?= null,
+    var userId: String ?= null,
+    var idea_id: String ?= null
 )
-
-

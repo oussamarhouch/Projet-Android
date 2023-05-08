@@ -16,6 +16,7 @@ import android.util.Base64
 import android.widget.Button
 import android.widget.RatingBar
 import android.widget.Toast
+import com.example.ideationnation.data.ProfileActivity
 
 
 class AccueilActivity() : AppCompatActivity(), Parcelable {
