@@ -4,289 +4,186 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileActivity">
+    tools:context=".data.ProfileActivity">
+
+
+
+
+        <Button
+            android:id="@+id/edit_profile"
+            android:layout_width="142dp"
+            android:layout_height="39dp"
+            android:layout_marginTop="376dp"
+            android:backgroundTint="#6ac4da"
+            android:text="Edit profile"
+
+            android:textColor="#E2010529"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.197"
+            app:layout_constraintStart_toStartOf="parent"
+
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/profile"
+            android:layout_width="363dp"
+            android:layout_height="321dp"
+            android:layout_marginTop="104dp"
+            android:alpha="0.3"
+            android:background="@drawable/circle_background"
+            android:backgroundTint="#6ac4da"
+            android:paddingStart="15dp"
+            android:paddingTop="50dp"
+            android:paddingEnd="10dp"
+            android:radius="100dp"
+            android:textColor="#000000"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="145dp"
+            android:layout_height="33dp"
+            android:layout_marginTop="28dp"
+            android:text="Profile"
+            android:textColor="#000000"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.09"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/id1" />
+
+
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="145dp"
+            android:layout_height="33dp"
+            android:layout_marginTop="180dp"
+            android:text=""
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.808"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/id1" />
+
+
+        <TextView
+            android:id="@+id/Aboutme"
+            android:layout_width="336dp"
+            android:layout_height="57dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="316dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="LabelFor" />
+
+        <TextView
+            android:id="@+id/posts4"
+            android:layout_width="108dp"
+            android:layout_height="22dp"
+            android:layout_marginTop="296dp"
+            android:text="ABOUT ME"
+            android:textColor="#000000"
+            android:textSize="15sp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.172"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/id1" />
+
+
+
+
+
+
+
+
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="145dp"
+            android:layout_height="33dp"
+            android:layout_marginTop="140dp"
+            android:text=""
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.808"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/id1" />
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="145dp"
+            android:layout_height="33dp"
+            android:layout_marginTop="180dp"
+            android:text= " "
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.808"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/id1" />
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="145dp"
+            android:layout_height="33dp"
+            android:layout_marginTop="140dp"
+            android:text=""
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.808"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/id1" />
+        <ImageView
+            android:id="@+id/profile_picture"
+            android:layout_width="147dp"
+            android:layout_height="148dp"
+            android:layout_marginTop="124dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.109"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/profileicon"
+            tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/edit_profile"
-        android:layout_width="142dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="376dp"
-        android:backgroundTint="#6ac4da"
-        android:text="Edit profile"
+        android:id="@+id/show_myideas"
+        android:layout_width="188dp"
+        android:layout_height="81dp"
+        android:layout_marginTop="572dp"
 
-        android:textColor="#E2010529"
+        android:text="Show My Posts"
 
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.197"
-        app:layout_constraintStart_toStartOf="parent"
-
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/infos"
-        android:layout_width="244dp"
-        android:layout_height="68dp"
-        android:layout_marginTop="260dp"
-        android:alpha="1"
-        android:background="@drawable/circle_background"
+        android:textColor="#6ac4da"
         android:backgroundTint="#020539"
-        android:paddingStart="15dp"
-        android:paddingTop="50dp"
-        android:paddingEnd="10dp"
-        android:radius="100dp"
-
-        android:textColor="#000000"
-        android:textSize="30sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.227"
+        app:layout_constraintHorizontal_bias="0.42"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/profile"
-        android:layout_width="363dp"
-        android:layout_height="321dp"
-        android:layout_marginTop="104dp"
-        android:alpha="0.3"
-        android:background="@drawable/circle_background"
-        android:backgroundTint="#6ac4da"
-        android:paddingStart="15dp"
-        android:paddingTop="50dp"
-        android:paddingEnd="10dp"
-        android:radius="100dp"
-        android:textColor="#000000"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="145dp"
-        android:layout_height="33dp"
-        android:layout_marginTop="28dp"
-        android:text="Profile"
-        android:textColor="#000000"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.09"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/id1" />
-
-    <TextView
-        android:id="@+id/My_posts"
-        android:layout_width="144dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="452dp"
-        android:text="My posts"
-        android:textColor="#000000"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.09"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/id1" />
-
-    <TextView
-        android:id="@+id/name"
-        android:layout_width="145dp"
-        android:layout_height="33dp"
-        android:layout_marginTop="180dp"
-        android:text=""
-        android:textColor="#000000"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.808"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/id1" />
-
-
-    <TextView
-        android:id="@+id/Aboutme"
-        android:layout_width="335dp"
-        android:layout_height="46dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="340dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="LabelFor" />
-
-    <TextView
-        android:id="@+id/posts_nbr"
-        android:layout_width="40dp"
-        android:layout_height="26dp"
-        android:layout_marginTop="272dp"
-        android:text="0"
-        android:textColor="#BFBDBD"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.191"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/id1" />
-
-    <TextView
-        android:id="@+id/posts4"
-        android:layout_width="40dp"
-        android:layout_height="26dp"
-        android:layout_marginTop="296dp"
-        android:text="posts"
-        android:textColor="#FAF9F9"
-        android:textSize="15sp"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.172"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/id1" />
-
-    <TextView
-        android:id="@+id/followers"
-        android:layout_width="87dp"
-        android:layout_height="27dp"
-        android:layout_marginTop="296dp"
-        android:text="followers"
-        android:textColor="#FAF9F9"
-        android:textSize="15sp"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.601"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/id1" />
-
-    <TextView
-        android:id="@+id/following"
-        android:layout_width="102dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="296dp"
-        android:text="following"
-        android:textColor="#FAF9F9"
-        android:textSize="15sp"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.388"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/id1" />
-
-    <TextView
-        android:id="@+id/followers_nbr"
-        android:layout_width="40dp"
-        android:layout_height="26dp"
-        android:layout_marginTop="272dp"
-        android:text="0"
-        android:textColor="#BFBDBD"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.366"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/id1" />
-
-    <TextView
-        android:id="@+id/following_nbrs"
-        android:layout_width="40dp"
-        android:layout_height="26dp"
-        android:layout_marginTop="272dp"
-        android:text="0"
-        android:textColor="#BFBDBD"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.579"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/id1" />
-
-    <TextView
-        android:id="@+id/username"
-        android:layout_width="145dp"
-        android:layout_height="33dp"
-        android:layout_marginTop="140dp"
-        android:text=""
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.808"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/id1" />
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="145dp"
-        android:layout_height="33dp"
-        android:layout_marginTop="180dp"
-        android:text= " "
-        android:textColor="#000000"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.808"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/id1" />
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="145dp"
-        android:layout_height="33dp"
-        android:layout_marginTop="140dp"
-        android:text=""
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.808"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/id1" />
-    <ImageView
-        android:id="@+id/profile_picture"
-        android:layout_width="147dp"
-        android:layout_height="148dp"
-        android:layout_marginTop="124dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.109"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/profileicon"
-        tools:ignore="MissingConstraints" />
-
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="415dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="472dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="409dp"
-        android:layout_height="227dp"
-        android:layout_marginTop="512dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-

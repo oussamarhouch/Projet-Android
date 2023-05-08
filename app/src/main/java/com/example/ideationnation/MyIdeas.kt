@@ -2,37 +2,34 @@ package com.example.ideationnation
 
 import android.annotation.SuppressLint
 import android.content.ContentValues.TAG
-import android.content.Intent
 import android.graphics.*
-import android.net.Uri
 import android.os.Bundle
-import android.provider.MediaStore
 import android.util.Base64
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*
 
-class ProfileActivity : AppCompatActivity() {
+class MyIdeas : AppCompatActivity() {
 
-    private lateinit var database: DatabaseReference
-    private lateinit var adapter: ArticleAdapter
+
+    private lateinit var database:  DatabaseReference
+
     private lateinit var recyclerView: RecyclerView
-    private lateinit var spinnerSort: Spinner
-    private lateinit var layoutInflater: LayoutInflater
+   private lateinit var  articles : ArrayList<Idea>
+
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_profile)
+        setContentView(R.layout.activity_myideas)
 
-        val profileImageView = findViewById<ImageView>(R.id.profile_picture)
+
+
+     /*   val profileImageView = findViewById<ImageView>(R.id.profile_picture)
         val sharedPrefs = getSharedPreferences("my_app_prefs", MODE_PRIVATE)
         val imageUriString = sharedPrefs.getString("profile_image_uri", "")
         if (!imageUriString.isNullOrEmpty()) {
@@ -51,63 +48,49 @@ class ProfileActivity : AppCompatActivity() {
 
 
         saveUserData()
-        showUserData()
+        showUserData()*/
 
-        layoutInflater = LayoutInflater.from(this@ProfileActivity)
-        database = FirebaseDatabase.getInstance().reference
-        adapter = ArticleAdapter()
+
+
         recyclerView = findViewById(R.id.recyclerView)
-        val layoutManager = GridLayoutManager(this, 2)
-        recyclerView.layoutManager = layoutManager
-        recyclerView.adapter = adapter
 
-        val sortOptions = arrayOf(
-            "Par titre (ascendant)",
-            "Par titre (descendant)"
-        )
+        recyclerView.layoutManager =  LinearLayoutManager(this)
+        recyclerView.setHasFixedSize(true)
 
-        spinnerSort = findViewById(R.id.spinner)
-        spinnerSort.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                val selectedOption = sortOptions[position]
-                val sortBy = when (selectedOption) {
-                    "Par titre (ascendant)" -> "title"
-                    else -> "title DESC"
-                }
+        articles = arrayListOf<Idea>()
 
-                val user = FirebaseAuth.getInstance().currentUser
-                getArticlesByUserId(user?.uid ?: "", sortBy) { articles ->
-                    adapter.setArticles(articles)
-                }
-            }
+        val user = FirebaseAuth.getInstance().currentUser
+        getArticlesByUserId(user?.uid ?: "")
 
-            override fun onNothingSelected(parent: AdapterView<*>?) {}
+
+
         }
-    }
-    private fun getArticlesByUserId(userId: String, sortBy: String, callback: (List<Idea>) -> Unit) {
-        val query = database.child("articles").orderByChild("userId").equalTo(userId)
-        query.addListenerForSingleValueEvent(object : ValueEventListener {
+
+    private fun getArticlesByUserId(userId: String) {
+        database=FirebaseDatabase.getInstance().getReference("myIdeas")
+
+        database.orderByChild("userId").equalTo(userId).addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val articles = mutableListOf<Idea>()
-                for (articleSnapshot in dataSnapshot.children) {
-                    val article = articleSnapshot.getValue(Idea::class.java)
-                    if (article != null) {
-                        articles.add(article)
+
+
+                if(dataSnapshot.exists()) {
+                    for (articleSnapshot in dataSnapshot.children) {
+
+                        val article = articleSnapshot.getValue(Idea::class.java)
+
+                        articles.add(article!!)
+
+
+
                     }
+                    recyclerView.adapter = ArticleAdapter(articles)
                 }
-                when (sortBy) {
 
-
-                    "title" -> articles.sortBy { it.title }
-
-                    else -> articles.sortByDescending { it.title }
-                }
-                callback(articles)
             }
 
             override fun onCancelled(databaseError: DatabaseError) {
                 Log.w(TAG, "getArticlesByUserId:onCancelled", databaseError.toException())
-                callback(emptyList())
+
             }
         })
     }

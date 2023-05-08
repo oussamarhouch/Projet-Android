@@ -9,15 +9,16 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class ArticleAdapter : RecyclerView.Adapter<ArticleAdapter.ArticleViewHolder>() {
-    private var articles = emptyList<Idea>()
+class ArticleAdapter (private val articles : ArrayList<Idea>): RecyclerView.Adapter<ArticleAdapter.ArticleViewHolder>() {
 
-    inner class ArticleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(article:Idea) {
-            itemView.findViewById<TextView>(R.id.title_text_view).text = article.title
 
-            itemView.findViewById<TextView>(R.id.contentent_text_view).text = article.myIdea
-        }
+
+     class ArticleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+
+           val title :TextView = itemView.findViewById(R.id.title_text_view)
+
+           val content :TextView = itemView.findViewById(R.id.content_text_view)
+
 
     }
 
@@ -28,15 +29,13 @@ class ArticleAdapter : RecyclerView.Adapter<ArticleAdapter.ArticleViewHolder>() 
 
     override fun onBindViewHolder(holder: ArticleViewHolder, position: Int) {
         val article = articles[position]
-        holder.bind(article)
+       holder.title.text =article.title
+        holder.content.text = article.myIdea
     }
 
     override fun getItemCount(): Int {
         return articles.size
     }
 
-    fun setArticles(articles: List<Idea>) {
-        this.articles = articles
-        notifyDataSetChanged()
-    }
+
 }
