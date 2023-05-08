@@ -85,7 +85,7 @@ class ProfileActivity : AppCompatActivity() {
         }
     }
     private fun getArticlesByUserId(userId: String, sortBy: String, callback: (List<Idea>) -> Unit) {
-        val query = database.child("articles").orderByChild("userId").equalTo(userId)
+        val query = database.child("myIdeas").orderByChild("userId").equalTo(userId)
         query.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 val articles = mutableListOf<Idea>()
