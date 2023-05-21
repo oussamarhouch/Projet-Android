@@ -6,15 +6,30 @@
     android:layout_height="match_parent"
     tools:context=".MyIdeas">
 
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/circle_background"
+        android:scaleType="centerCrop"
+        android:alpha="0.6"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/intro"
+        tools:layout_editor_absoluteX="11dp"
+        android:contentDescription="TODO" />
 
     <TextView
         android:id="@+id/My_posts"
         android:layout_width="144dp"
         android:layout_height="42dp"
-        android:layout_marginTop="44dp"
-        android:text="My posts"
+        android:layout_marginTop="32dp"
+        android:text="My Ideas"
         android:textColor="#000000"
         android:textSize="30sp"
+        android:textStyle ="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.059"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,14 +38,25 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="413dp"
-        android:layout_height="596dp"
-        android:layout_marginTop="112dp"
+        android:layout_width="418dp"
+        android:layout_height="630dp"
+        android:layout_marginTop="100dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="71dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/pen" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

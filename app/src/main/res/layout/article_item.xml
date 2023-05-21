@@ -1,10 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:backgroundTint="#6ac4da">
+
+    <TextView
+        android:id="@+id/profile"
+        android:layout_width="392dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="16dp"
+        android:alpha="0.7"
+        android:background="@drawable/circle_background"
+        android:backgroundTint="#F5FAFB"
+        android:paddingStart="15dp"
+        android:paddingTop="50dp"
+        android:paddingEnd="10dp"
+        android:radius="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.055"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,8 +31,8 @@
         android:orientation="vertical"
         android:padding="16dp"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="435dp">
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="24dp">
 
         <TextView
             android:id="@+id/title_text_view"
@@ -22,17 +41,31 @@
             android:text="hey"
             android:textColor="#E2010529"
             android:textSize="30sp"
-            android:textStyle="bold" />
+            android:textStyle="italic" />
 
         <TextView
             android:id="@+id/content_text_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:autoSizeMaxTextSize="20sp"
+            android:autoSizeMinTextSize="15sp"
+            android:autoSizeTextType="uniform"
             android:text="hey"
             android:textColor="#E2010529"
             android:textSize="25sp"
-             />
+            android:textStyle="italic" />
 
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="55dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.929"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/idea" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

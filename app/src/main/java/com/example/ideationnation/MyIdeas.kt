@@ -29,39 +29,15 @@ class MyIdeas : AppCompatActivity() {
 
 
 
-     /*   val profileImageView = findViewById<ImageView>(R.id.profile_picture)
-        val sharedPrefs = getSharedPreferences("my_app_prefs", MODE_PRIVATE)
-        val imageUriString = sharedPrefs.getString("profile_image_uri", "")
-        if (!imageUriString.isNullOrEmpty()) {
-            val imageUri = Uri.parse(imageUriString)
-            val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, imageUri)
-            val circularBitmap = getRoundedBitmap(bitmap)
-            profileImageView.setImageBitmap(circularBitmap)
-        }
-
-
-        val editButton = findViewById<Button>(R.id.edit_profile)
-        editButton.setOnClickListener {
-            val intent = Intent(this, EditProfileActivity::class.java)
-            startActivity(intent)
-        }
-
-
-        saveUserData()
-        showUserData()*/
-
-
-
         recyclerView = findViewById(R.id.recyclerView)
-
-        recyclerView.layoutManager =  LinearLayoutManager(this)
+        recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.setHasFixedSize(true)
 
         articles = arrayListOf<Idea>()
 
         val user = FirebaseAuth.getInstance().currentUser
         getArticlesByUserId(user?.uid ?: "")
-
+        recyclerView.adapter = ArticleAdapter(articles)
 
 
         }

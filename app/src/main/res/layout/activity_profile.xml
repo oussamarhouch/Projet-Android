@@ -6,34 +6,46 @@
     android:layout_height="match_parent"
     tools:context=".data.ProfileActivity">
 
-
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@drawable/circle_background"
+            android:scaleType="centerCrop"
+            android:alpha="0.6"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/intro"
+            tools:layout_editor_absoluteX="11dp"
+            android:contentDescription="TODO" />
 
 
         <Button
             android:id="@+id/edit_profile"
             android:layout_width="142dp"
             android:layout_height="39dp"
-            android:layout_marginTop="376dp"
+            android:layout_marginTop="364dp"
             android:backgroundTint="#6ac4da"
             android:text="Edit profile"
 
             android:textColor="#E2010529"
 
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.197"
+            app:layout_constraintHorizontal_bias="0.189"
             app:layout_constraintStart_toStartOf="parent"
 
             app:layout_constraintTop_toTopOf="parent" />
-
 
         <TextView
             android:id="@+id/profile"
             android:layout_width="363dp"
             android:layout_height="321dp"
             android:layout_marginTop="104dp"
-            android:alpha="0.3"
+            android:alpha="0.7"
             android:background="@drawable/circle_background"
-            android:backgroundTint="#6ac4da"
+            android:backgroundTint="#F5FAFB"
             android:paddingStart="15dp"
             android:paddingTop="50dp"
             android:paddingEnd="10dp"
@@ -54,6 +66,7 @@
             android:text="Profile"
             android:textColor="#000000"
             android:textSize="30sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.09"
             app:layout_constraintStart_toStartOf="parent"
@@ -61,35 +74,56 @@
             app:srcCompat="@drawable/id1" />
 
 
-
         <TextView
-            android:id="@+id/name"
+            android:id="@+id/textView21"
             android:layout_width="145dp"
             android:layout_height="33dp"
-            android:layout_marginTop="180dp"
-            android:text=""
+            android:layout_marginTop="444dp"
+            android:text="My Ideas"
             android:textColor="#000000"
-            android:textSize="20sp"
+            android:textSize="30sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.808"
+            app:layout_constraintHorizontal_bias="0.109"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/id1" />
 
 
         <TextView
+            android:id="@+id/name"
+            android:layout_width="192dp"
+            android:layout_height="29dp"
+            android:layout_marginTop="232dp"
+            android:autoSizeMaxTextSize="18sp"
+            android:autoSizeMinTextSize="15sp"
+
+            android:autoSizeTextType="uniform"
+            android:text=""
+            android:textColor="#000000"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.812"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/id1" />
+
+        <TextView
             android:id="@+id/Aboutme"
             android:layout_width="336dp"
             android:layout_height="57dp"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="316dp"
+            android:layout_marginTop="308dp"
+            android:autoSizeMaxTextSize="17sp"
+            android:autoSizeMinTextSize="12sp"
+            android:autoSizeTextType="uniform"
             android:autofillHints=""
             android:ems="10"
             android:inputType="textEmailAddress"
-            app:layout_constraintEnd_toEndOf="parent"
 
-            app:layout_constraintHorizontal_bias="0.493"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.32"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="LabelFor" />
@@ -98,65 +132,65 @@
             android:id="@+id/posts4"
             android:layout_width="108dp"
             android:layout_height="22dp"
-            android:layout_marginTop="296dp"
+            android:layout_marginTop="276dp"
             android:text="ABOUT ME"
             android:textColor="#000000"
             android:textSize="15sp"
-
+android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.172"
+            app:layout_constraintHorizontal_bias="0.201"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/id1" />
 
-
-
-
-
-
-
-
-
         <TextView
-            android:id="@+id/username"
-            android:layout_width="145dp"
-            android:layout_height="33dp"
-            android:layout_marginTop="140dp"
-            android:text=""
-            android:textColor="#000000"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.808"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/id1" />
-        <TextView
-            android:id="@+id/textView15"
-            android:layout_width="145dp"
-            android:layout_height="33dp"
-            android:layout_marginTop="180dp"
-            android:text= " "
+            android:id="@+id/textView14"
+            android:layout_width="189dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="124dp"
+            android:text="Email"
             android:textColor="#000000"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.808"
+            app:layout_constraintHorizontal_bias="0.814"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/id1" />
+
         <TextView
-            android:id="@+id/textView14"
-            android:layout_width="145dp"
-            android:layout_height="33dp"
-            android:layout_marginTop="140dp"
-            android:text=""
+            android:id="@+id/textView15"
+            android:layout_width="194dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="196dp"
+            android:text="Name: "
             android:textColor="#000000"
             android:textSize="20sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.808"
+            app:layout_constraintHorizontal_bias="0.828"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/id1" />
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="191dp"
+            android:layout_height="39dp"
+            android:layout_marginTop="152dp"
+            android:autoSizeMaxTextSize="18sp"
+            android:autoSizeMinTextSize="15sp"
+
+            android:autoSizeTextType="uniform"
+            android:text=""
+
+            android:textColor="#000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.809"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/id1" />
+
         <ImageView
             android:id="@+id/profile_picture"
             android:layout_width="147dp"
@@ -175,8 +209,8 @@
         android:layout_height="81dp"
         android:layout_marginTop="572dp"
 
-        android:text="Show My Posts"
-
+        android:text="Show My Ideas"
+        android:textStyle="italic"
         android:textColor="#6ac4da"
         android:backgroundTint="#020539"
         app:layout_constraintEnd_toEndOf="parent"
