@@ -2,6 +2,7 @@
 package com.example.ideationnation
 
 import android.annotation.SuppressLint
+import android.content.ContentValues
 import android.content.Intent
 import android.graphics.*
 import android.net.Uri
@@ -13,13 +14,22 @@ import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import java.util.*
 import android.util.Base64
+import android.util.Log
 import android.widget.Button
 import android.widget.RatingBar
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.ideationnation.data.ProfileActivity
+import com.google.firebase.database.*
 
 
 class AccueilActivity() : AppCompatActivity(), Parcelable {
+
+    private lateinit var database: DatabaseReference
+
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var  articles : ArrayList<Idea>
 
     constructor(parcel: Parcel) : this() {
     }
@@ -29,6 +39,16 @@ class AccueilActivity() : AppCompatActivity(), Parcelable {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_acceuil)
 
+
+       recyclerView=findViewById(R.id.allideas)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.setHasFixedSize(true)
+
+        articles = arrayListOf<Idea>()
+        getArticles()
+        recyclerView.adapter = IdeasAdapter(articles)
+
+
         // ajout du boutton qui nous méne à add (Toubil)
         val buttonClick = findViewById<Button>(R.id.button5)
         buttonClick.setOnClickListener {
@@ -36,12 +56,7 @@ class AccueilActivity() : AppCompatActivity(), Parcelable {
             startActivity(intent)
         }
 
-        //ajout du bouton qui nous méne à comment (Toubil)
-        val buttonComment = findViewById<Button>(R.id.commBtn)
-        buttonComment.setOnClickListener {
-            val intent = Intent(this, CommentActivity::class.java)
-            startActivity(intent)
-        }
+
 
 
 
@@ -61,17 +76,43 @@ class AccueilActivity() : AppCompatActivity(), Parcelable {
                 startActivity(intent)
             }
         }
-        //ajout rating bar
 
-        val myRatingBar = findViewById<RatingBar>(R.id.ratingBar)
-        myRatingBar.stepSize =.25f
-        myRatingBar.setOnRatingBarChangeListener { ratingBar, rating, fromUser ->
-            Toast.makeText(this, "Rated: $rating !", Toast.LENGTH_SHORT).show()
-
-        }
 
 
     }
+    private fun getArticles() {
+        database = FirebaseDatabase.getInstance().getReference("myIdeas")
+
+        database.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+
+
+                if(dataSnapshot.exists()) {
+                    for (articleSnapshot in dataSnapshot.children) {
+                        val ideaMap = articleSnapshot.getValue() as? Map<*, *>
+
+                        val title = ideaMap?.get("title") as? String
+                        val content = ideaMap?.get("myIdea") as? String
+
+                        val idea = Idea(title, content)
+
+
+                        articles.add(idea!!)
+
+
+
+                    }
+                    recyclerView.adapter = IdeasAdapter(articles)
+                }
+
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                // Gestion des erreurs lors de la récupération des données
+            }
+        })
+    }
+
 
 
     private fun getRoundedBitmap(bitmap: Bitmap): Bitmap {
@@ -113,5 +154,6 @@ class AccueilActivity() : AppCompatActivity(), Parcelable {
 
 
     }
-}
 
+
+}
